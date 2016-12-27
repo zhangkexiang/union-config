@@ -1,0 +1,38 @@
+{
+  "name": "laravel-dev-common/union-config",
+  "description": "Laravel dev config util",
+  "type":"util",
+  "keywords": ["config", "util"],
+  "license": "MIT",
+  "homepage": "https://github.com/zhangkexiang/union-middleware",
+  "authors": [
+    {
+      "name": "coding",
+      "email": "zhangkexiang@qingdao1024.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9"
+
+  },
+  "replace": {
+  },
+  "autoload": {
+    "classmap": [
+    ],
+    "files": [
+      "src/union-functions.php"
+    ],
+    "psr-4": {
+    }
+  },
+  "suggest": {
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
+
