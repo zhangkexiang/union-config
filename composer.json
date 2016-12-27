@@ -4,7 +4,7 @@
   "type":"util",
   "keywords": ["config", "util"],
   "license": "MIT",
-  "homepage": "https://github.com/zhangkexiang/union-middleware",
+  "homepage": "https://github.com/zhangkexiang/union-config",
   "authors": [
     {
       "name": "coding",
