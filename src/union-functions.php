@@ -12,7 +12,14 @@ function union_config($name,$default=''){
     }else{
 //      测试环境获取配置
         $arr = explode('.',$name);
-        $path =  __DIR__.'/../config/'.$arr[0].'.php';
+
+        $path = __DIR__;
+        if(strstr(__DIR__,"vendor"))
+        {
+            $path=$path.'/../../../..';
+        }
+        $path =  $path.'/../config/'.$arr[0].'.php';
+
         if(!file_exists($path)){
             return $default;
         }
