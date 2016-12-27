@@ -8,17 +8,25 @@
 function union_config($name,$default=''){
     if (function_exists('config')) {
 //      laravel环境中可以取union配置
-        $result = config($name,$default);
+        return config($name,$default);
     }else{
 //      测试环境获取配置
         $arr = explode('.',$name);
-        $conf = require __DIR__.'/../config/'.$arr[0].'.php';// 此处不能用用require_once
-        $conf = $conf[$arr[1]];
-        if(array_key_exists($arr[2],$conf)){
-            $result = $conf[$arr[2]];
-        }else{
-            $result = $default;
+        $path =  __DIR__.'/../config/'.$arr[0].'.php';
+        if(!file_exists($path)){
+            return $default;
         }
+        $conf = require $path ;// 此处不能用用require_once
+        if(sizeof($arr)>1){
+            for($i=1;$i<sizeof($arr);$i++){
+                if(array_key_exists($arr[$i],$conf)){
+                    $conf = $conf[$arr[$i]];
+                }else{
+                    return $default;
+                }
+            }
+        }
+        return $conf;
+
     }
-    return $result;
 }
