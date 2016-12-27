@@ -16,7 +16,7 @@ function union_config($name,$default=''){
         $path = __DIR__;
         if(strstr(__DIR__,"vendor"))
         {
-            $path=$path.'/../../../..';
+            $path=$path.'/../../..';
         }
         $path =  $path.'/../config/'.$arr[0].'.php';
 
